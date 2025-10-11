@@ -135,3 +135,45 @@
   font-size: 0.95rem;
   text-align: center;
 }
+
+/* === Всплывающие подсказки === */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 160px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  position: absolute;
+  z-index: 10;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -80px; /* половина ширины (160/2) */
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  pointer-events: none;
+
+  /* Маленький треугольник внизу подсказки */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+  }
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
