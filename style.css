@@ -282,10 +282,17 @@ body {
 
 .typewriter {
   font-family: 'Courier New', monospace;
+  text-align: center; /* Важно: центрирование */
   overflow: hidden;
   white-space: nowrap;
+  color: white; /* или твой цвет текста */
+}
+
+.typewriter span {
+  display: inline-block;
+  overflow: hidden;
   animation: typing 3s steps(40, end) forwards;
-  color: white; /* или любой цвет текста */
+  opacity: 1;
 }
 
 @keyframes typing {
