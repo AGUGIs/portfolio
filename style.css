@@ -1,5 +1,5 @@
 .center-card {
-  background: linear-gradient(to bottom, #5b0c7a 0%, #5b0c7a 60%, #d424b9 100%);
+  background: linear-gradient(to bottom, #5b0c7a 0%, #5b0c7a 50%, #d424b9 100%);
   color: white;
   padding: 2rem;
   text-align: center;
@@ -45,7 +45,7 @@
 }
 
 .info-block {
-  background: #1b1f4a;
+  background: #0e0d57;
   color: white;
   padding: 2rem;
   border-radius: 16px;
@@ -79,7 +79,7 @@
 }
 /* Стиль для шапки (навбара) */
 .navbar {
-  background-color: #1b1f4a !important;
+  background-color: #0e0d57 !important;
 }
 
 /* Цвет текста и ссылок в шапке — сделаем белым */
