@@ -164,14 +164,27 @@
   padding: 0 0.5rem;
 }
 
-/* === Footer === */
+/* === Footer — прилипает к низу === */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  flex: 1;
+  padding-top: 20px;
+}
+
 .footer {
   background: #1b1f4a;
   color: #a0a7e6;
   text-align: center;
   padding: 1.5rem 0;
-  margin-top: 3rem;
   font-size: 0.9rem;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
 
 .footer a {
