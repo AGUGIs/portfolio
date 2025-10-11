@@ -1,44 +1,52 @@
-/* 3D-эффект для карточки */
-.scene {
-  width: 250px;
-  height: 300px;
-  perspective: 1000px;
+/* Центральная карточка — теперь тоже с 3D-эффектом */
+.center-card {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  max-width: 300px;
   margin: 2rem auto;
-}
-
-.card-3d {
-  width: 100%;
-  height: 100%;
+  transition: transform 0.6s ease-out, box-shadow 0.6s ease-out;
   position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.scene:hover .card-3d {
-  transform: rotateY(20deg) rotateX(10deg);
+.center-card:hover {
+  transform: translateZ(20px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
-.card-face {
+/* Боковые плашки — общий стиль */
+.side-card {
+  width: 150px;
+  height: 200px;
+  position: relative;
+  perspective: 800px;
+  margin: 1rem;
+  transition: transform 0.6s ease-out;
+}
+
+.side-card .card-inner {
   position: absolute;
   width: 100%;
   height: 100%;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.6s ease-out;
+}
+
+.side-card:hover .card-inner {
+  transform: translateZ(20px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Изображения внутри плашек */
+.side-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
-  color: white;
-  text-align: center;
-}
-
-.face-front {
-  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-}
-
-.face-back {
-  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
-  transform: rotateY(180deg);
 }
