@@ -283,16 +283,20 @@ body {
 .typewriter {
   font-family: monospace;
   overflow: hidden;
-  border-right: 3px solid #d424b9;
   white-space: nowrap;
-  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  border-right: 3px solid #d424b9; /* Курсор */
+  animation: 
+    typing 3s steps(40, end) forwards,
+    blink-caret 0.75s step-end 3s infinite; /* Моргание начинается ПОСЛЕ печатания */
 }
 
+/* Анимация печатания */
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
 }
 
+/* Анимация моргания курсора */
 @keyframes blink-caret {
   from, to { border-color: transparent; }
   50% { border-color: #d424b9; }
