@@ -163,3 +163,24 @@
   line-height: 1.4;
   padding: 0 0.5rem;
 }
+
+/* === Footer === */
+.footer {
+  background: #1b1f4a;
+  color: #a0a7e6;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #d424b9;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #fc5c7d;
+  text-decoration: underline;
+}
