@@ -34,8 +34,8 @@
   transform-style: preserve-3d;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   border-radius: 10px; /* ← сохраняем радиус */
-  overflow: hidden;
   transition: transform 0.6s ease-out;
+  clip-path: inset(0);
 }
 
 .side-card:hover .card-inner {
