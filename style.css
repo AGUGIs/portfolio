@@ -99,81 +99,67 @@
   padding: 3rem 0;
 }
 
-.skill-card {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.flip-card {
+  perspective: 1000px;
+  height: 190px; /* достаточно для 2 строк текста */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
   height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 12px;
 }
 
-.skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+.flip-card-front {
+  background: white;
+  color: #333;
 }
 
-.skill-img {
-  width: 80px;
-  height: 80px;
+.flip-card-back {
+  background: linear-gradient(135deg, #5b0c7a, #d424b9);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card .skill-img {
+  width: 70px;
+  height: 70px;
   object-fit: contain;
   margin-bottom: 0.75rem;
-  transition: filter 0.3s ease;
 }
 
-.skill-card:hover .skill-img {
-  filter: brightness(1.1) saturate(1.2);
-}
-
-.skill-name {
+.flip-card .skill-name {
   font-weight: 600;
-  color: #333;
-  font-size: 0.95rem;
-  text-align: center;
+  font-size: 1rem;
 }
 
-/* === Всплывающие подсказки === */
-/* === Всплывающие подсказки === */
-.tooltip-container {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip-text {
-  visibility: hidden;
-  width: 160px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 8px;
-  padding: 8px 10px;
-  font-size: 0.85rem;
-  position: absolute;
-  z-index: 10;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -80px; /* половина ширины */
-  opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
-  pointer-events: none;
-}
-
-.tooltip-text::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #333 transparent transparent transparent;
-}
-
-.tooltip-container:hover .tooltip-text {
-  visibility: visible;
-  opacity: 1;
+.flip-card-back p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding: 0 0.5rem;
 }
