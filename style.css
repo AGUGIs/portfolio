@@ -197,3 +197,28 @@ body {
   color: #fc5c7d;
   text-decoration: underline;
 }
+
+/* === Стили для контактов === */
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  transition: color 0.2s, transform 0.2s;
+  padding: 0.4rem 0;
+}
+
+.contact-link:hover {
+  color: #d424b9;
+  transform: translateX(4px);
+}
+
+.contact-link i {
+  color: #5b0c7a;
+  font-size: 1.3rem;
+}
+
+.contact-link:hover i {
+  color: #fc5c7d;
+}
