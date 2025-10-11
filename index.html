@@ -29,20 +29,35 @@
   </div>
 </nav>
 
-<div class="container">
-  <h1 class="text-center my-4">Привет! Я — студент</h1>
+<div class="container mt-4">
+  <h1 class="text-center">Привет! Я — студент</h1>
 
-  <!-- 3D-карточка -->
-  <div class="scene">
-    <div class="card-3d">
-      <div class="card-face face-front">
+  <!-- Основная композиция -->
+  <div class="row align-items-center justify-content-center">
+    <!-- Левая плашка -->
+    <div class="col-md-2 d-none d-md-block">
+      <div class="side-card left-side">
+        <div class="card-inner">
+          <img src="https://via.placeholder.com/150x200/3498db/ffffff?text=Фото+1" alt="Фото 1">
+        </div>
+      </div>
+    </div>
+
+    <!-- Центральная карточка -->
+    <div class="col-md-4">
+      <div class="center-card">
         <h3>Кирилл</h3>
         <p>Учусь фулл-стэк разработке</p>
         <p>HTML, CSS, JS</p>
       </div>
-      <div class="card-face face-back">
-        <p>Люблю создавать сайты!</p>
-        <p>И учиться новому 🚀</p>
+    </div>
+
+    <!-- Правая плашка -->
+    <div class="col-md-2 d-none d-md-block">
+      <div class="side-card right-side">
+        <div class="card-inner">
+          <img src="https://via.placeholder.com/150x200/e74c3c/ffffff?text=Фото+2" alt="Фото 2">
+        </div>
       </div>
     </div>
   </div>
