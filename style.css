@@ -198,77 +198,72 @@ body {
   text-decoration: underline;
 }
 
-/* === Вертикальный список контактов === */
+/* === Список контактов — ровно друг над другом, по центру === */
 .contact-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 400px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 320px;
 }
 
 .contact-item {
   display: flex !important;
   align-items: center !important;
+  justify-content: center;
   text-decoration: none !important;
   color: #333 !important;
   font-size: 1.1rem;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
   background: #f8f9fa;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
+  width: 100%;
+  text-align: center;
 }
 
 .contact-item:hover {
   color: #d424b9 !important;
-  transform: translateX(4px);
+  transform: translateY(-3px);
   background: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
 }
 
 .contact-item i {
   color: #5b0c7a;
   font-size: 1.3rem;
-  margin-right: 12px;
-  min-width: 24px;
-  text-align: center;
+  margin-right: 10px;
 }
 
 .contact-item:hover i {
   color: #fc5c7d;
 }
 
-/* === Стили контактов — слева === */
-.contact-list {
+/* === Карточка с изображением — пропорциональная, анимированная === */
+.contact-image-card {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.6s ease-out, box-shadow 0.6s ease-out;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 400px;
+  align-items: center;
+  justify-content: center;
 }
 
-.contact-item {
-  display: flex !important;
-  align-items: center !important;
-  text-decoration: none !important;
-  color: #333 !important;
-  font-size: 1.1rem;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  background: #f8f9fa;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: all 0.2s ease;
+.contact-image-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  max-height: 350px; /* Ограничиваем высоту, чтобы не вылезать */
 }
 
-.contact-item:hover {
-  color: #d424b9 !important;
-  transform: translateX(4px);
-  background: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.contact-item i {
-  color: #5b0c7a;
-  font-size: 1.3rem;
-  margin-right: 12px;
+.contact-image-card:hover {
+  transform: translateZ(20px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
