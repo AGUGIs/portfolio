@@ -1,4 +1,4 @@
-/* Центральная карточка — теперь тоже с 3D-эффектом */
+
 .center-card {
   background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
   color: white;
@@ -17,12 +17,11 @@
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
-/* Боковые плашки — общий стиль */
 .side-card {
   width: 150px;
   height: 200px;
   margin: 1rem;
-  perspective: 800px; /* создаёт ощущение глубины */
+  perspective: 800px;
 }
 
 .side-card .card-inner {
@@ -32,11 +31,10 @@
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: transform 0.6s ease-out, box-shadow 0.6s ease-out;
-  /* УБРАЛИ transform-style и position: absolute */
 }
 
 .side-card:hover .card-inner {
-  transform: translateZ(10px) scale(1.05); /* работает без preserve-3d */
+  transform: translateZ(10px) scale(1.05);
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
@@ -45,5 +43,38 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  /* НЕ нужно border-radius на img, если overflow: hidden на родителе */
+}
+
+.info-block {
+  background: #1b1f4a;
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 800px;
+  margin: 3rem auto 2rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer; /* курсор как на кнопке */
+}
+
+.info-block:hover {
+  transform: translateZ(12px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Необязательно: анимация при загрузке */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-block {
+  animation: fadeInUp 0.8s ease-out;
 }
