@@ -44,6 +44,7 @@
   display: block;
 }
 
+/*Обо мне*/
 .info-block {
   background: #0e0d57;
   color: white;
@@ -53,13 +54,25 @@
   max-width: 800px;
   margin: 3rem auto 2rem;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  cursor: pointer; /* курсор как на кнопке */
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Эффект выпрыгивания + неоновое свечение */
 .info-block:hover {
   transform: translateZ(12px) scale(1.03);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+
+  /* Голубое неоновое свечение со всех сторон */
+  outline: 2px solid #4facfe;
+  outline-offset: 4px;
+  box-shadow: 
+    0 0 15px #4facfe,
+    0 0 30px #4facfe,
+    0 0 45px #4facfe,
+    0 0 60px #4facfe;
 }
 
 /* Необязательно: анимация при загрузке */
