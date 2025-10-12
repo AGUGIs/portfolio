@@ -423,3 +423,16 @@ body {
 .navbar-brand:hover img {
   transform: rotate(10deg) scale(1.1);
 }
+
+/* Стили для блока инструментов */
+.tool-icon {
+  transition: transform 0.3s ease;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.tool-icon:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
