@@ -13,7 +13,13 @@
 
 .center-card:hover {
   transform: translateZ(20px) scale(1.05);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  box-shadow: 
+    0 15px 30px rgba(0,0,0,0.2),
+    0 0 15px #4facfe,
+    0 0 30px #4facfe,
+    0 0 45px #4facfe;
+  outline: 2px solid #4facfe;
+  outline-offset: 4px;
 }
 
 .side-card {
@@ -34,7 +40,13 @@
 
 .side-card:hover .card-inner {
   transform: translateZ(10px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  box-shadow: 
+    0 10px 25px rgba(0,0,0,0.3),
+    0 0 15px #4facfe,
+    0 0 30px #4facfe,
+    0 0 45px #4facfe;
+  outline: 2px solid #4facfe;
+  outline-offset: 4px;
 }
 
 .side-card img {
