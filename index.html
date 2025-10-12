@@ -217,5 +217,22 @@
     });
   });
 </script>
+
+<script>
+  // Определяем текущий путь
+  const currentPath = window.location.pathname.split('/').pop();
+
+  // Находим все ссылки в навбаре
+  document.querySelectorAll('.nav-link').forEach(link => {
+    // Убираем active со всех
+    link.classList.remove('active');
+
+    // Если href совпадает с текущей страницей — добавляем active
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
+    }
+  });
+</script>
+
 </body>
 </html>
