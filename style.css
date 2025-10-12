@@ -299,3 +299,48 @@ body {
   from { width: 0; }
   to { width: 100%; }
 }
+
+/* === НАВБАР — АНИМАЦИЯ ПРИ НАВЕДЕНИИ === */
+
+.navbar-nav .nav-link {
+  position: relative;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+}
+
+/* Подчёркивание при наведении */
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #d424b9; /* Цвет подчёркивания */
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 80%;
+}
+
+/* Эффект "выпрыгивания" */
+.navbar-nav .nav-link:hover {
+  color: #fc5c7d !important; /* Яркий цвет при hover */
+  transform: scale(1.05) translateY(-2px);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Активный пункт (текущая страница) */
+.navbar-nav .nav-link.active {
+  color: #fc5c7d !important;
+  font-weight: 600;
+  text-shadow: 0 0 3px rgba(252, 92, 125, 0.5);
+}
+
+.navbar-nav .nav-link.active::after {
+  width: 80%;
+}
