@@ -120,20 +120,5 @@
   });
 </script>
 
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Предотвращаем стандартное поведение формы
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    alert(`Спасибо, ${name}! Ваше сообщение отправлено.\n\nEmail: ${email}\n\nСообщение:\n${message}`);
-
-    // Очищаем форму
-    this.reset();
-  });
-</script>
-
 </body>
 </html>
