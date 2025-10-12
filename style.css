@@ -539,6 +539,11 @@ body {
   background: linear-gradient(to right, #d424b9, #5b0c7a);
   transform: scale(1.03);
 }
+
+#contactForm .alert {
+  border-radius: 8px;
+  font-weight: 500;
+}
 /* Отступ между контентом и футером на странице контактов */
 body > .container {
   margin-bottom: 3rem;
