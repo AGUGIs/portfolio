@@ -286,7 +286,7 @@ body {
   height: auto;
   object-fit: cover;
   display: block;
-  max-height: 700px;
+  max-height: 750px;
 }
 
 .contact-image-card:hover {
