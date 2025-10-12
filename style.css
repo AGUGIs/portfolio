@@ -384,12 +384,15 @@ body {
 }
 
 /* === Стили для изображений в модальном окне === */
+/* === Стили для изображений в модальном окне — пропорциональные === */
+
 .img-container {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
+  height: 200px; /* Фиксированная высота для обоих */
 }
 
 .img-container:hover {
@@ -399,9 +402,11 @@ body {
 
 .img-container img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* Обрезает по краям, сохраняя пропорции */
+  object-position: center;
   display: block;
-  object-fit: cover;
+  border-radius: 10px;
 }
 
 .img-caption {
