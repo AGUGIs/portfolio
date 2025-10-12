@@ -462,3 +462,16 @@ body {
   color: #6c757d;
   font-size: 1rem;
 }
+
+.motto-bg {
+  transition: transform 0.3s ease;
+}
+
+.motto-bg:hover {
+  transform: scale(1.01);
+}
+
+.motto-overlay {
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
