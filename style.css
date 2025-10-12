@@ -415,3 +415,11 @@ body {
   color: #6c757d;
   margin-top: 0.5rem;
 }
+
+.navbar-brand img {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: rotate(10deg) scale(1.1);
+}
