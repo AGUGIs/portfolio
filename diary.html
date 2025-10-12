@@ -44,5 +44,22 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Определяем текущий путь
+  const currentPath = window.location.pathname.split('/').pop();
+
+  // Находим все ссылки в навбаре
+  document.querySelectorAll('.nav-link').forEach(link => {
+    // Убираем active со всех
+    link.classList.remove('active');
+
+    // Если href совпадает с текущей страницей — добавляем active
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
+    }
+  });
+</script>
+  
 </body>
 </html>
