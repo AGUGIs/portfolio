@@ -22,7 +22,7 @@
   outline-offset: 4px;
 }
 
-.side-card {
+..side-card {
   width: 100%;
   max-width: 150px;
   height: auto;
@@ -56,7 +56,6 @@
   object-fit: cover;
   display: block;
 }
-
 /*Обо мне*/
 .info-block {
   background: #0e0d57;
