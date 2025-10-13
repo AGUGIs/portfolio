@@ -56,7 +56,6 @@
   object-fit: cover;
   display: block;
 }
-/*Обо мне*/
 .info-block {
   background: #0e0d57;
   color: white;
@@ -70,6 +69,7 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  /* Отступы на всех экранах */
   padding-left: 1rem;
   padding-right: 1rem;
 }
