@@ -115,7 +115,7 @@
 }
 
 .navbar-nav .nav-link:hover {
-  color: #a0a7e6 !important; /* Светло-серый с фиолетовым оттенком */
+  color: #a0a7e6 !important;
 }
 
 /* Навыки */
@@ -126,7 +126,7 @@
 
 .flip-card {
   perspective: 1000px;
-  height: 190px; /* достаточно для 2 строк текста */
+  height: 190px;
 }
 
 .flip-card-inner {
@@ -236,7 +236,7 @@ body {
 .contact-item {
   display: flex !important;
   align-items: center !important;
-  justify-content: flex-start; /* Выравнивание по левому краю */
+  justify-content: flex-start;
   text-decoration: none !important;
   color: #333 !important;
   font-size: 1.1rem;
