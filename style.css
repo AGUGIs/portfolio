@@ -23,21 +23,14 @@
 }
 
 .side-card {
-  width: 100%;
-  max-width: 150px;
-  height: auto;
+  width: 150px;
+  height: 200px;
   margin: 0.5rem;
   perspective: 800px;
-}
-
-@media (max-width: 768px) {
-  .side-card {
-    max-width: 120px;
-  }
-}
-
-body {
-  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .side-card .card-inner {
@@ -64,8 +57,8 @@ body {
 .side-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 🔥 Ключевое свойство — обрезает изображение, сохраняя пропорции */
-  object-position: center; /* Центрирует изображение при обрезке */
+  object-fit: cover; /* Обрезает изображение, сохраняя пропорции */
+  object-position: center; /* Центрирует изображение */
   display: block;
 }
 .info-block {
