@@ -1,0 +1,62 @@
+document.addEventListener('DOMContentLoaded', () => {
+  // Мобильное меню
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.querySelector('.navbar-collapse');
+  if (navbarToggler) {
+    navbarToggler.addEventListener('click', () => {
+      navbarCollapse.classList.toggle('show');
+    });
+  }
+
+  // Активный пункт меню
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
+    }
+  });
+
+  // Модальные окна
+  window.openModal = function(id) {
+    document.getElementById(id).classList.add('show');
+    document.body.style.overflow = 'hidden';
+  };
+  window.closeModal = function(id) {
+    document.getElementById(id).classList.remove('show');
+    document.body.style.overflow = '';
+  };
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal(modal.id);
+      }
+    });
+  });
+
+  // Форма контактов
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById('successMessage').classList.remove('d-none');
+          this.reset();
+          setTimeout(() => {
+            document.getElementById('successMessage').classList.add('d-none');
+          }, 5000);
+        } else {
+          throw new Error('Ошибка отправки');
+        }
+      })
+      .catch(() => alert('Ошибка при отправке формы.'));
+    });
+  }
+});
