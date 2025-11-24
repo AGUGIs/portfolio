@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Мобильное меню
   const navbarToggler = document.querySelector('.navbar-toggler');
   const navbarCollapse = document.querySelector('.navbar-collapse');
-  if (navbarToggler) {
+  if (navbarToggler && navbarCollapse) {
     navbarToggler.addEventListener('click', () => {
       navbarCollapse.classList.toggle('show');
     });
@@ -15,23 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (link.getAttribute('href') === currentPath) {
       link.classList.add('active');
     }
-  });
-
-  // Модальные окна
-  window.openModal = function(id) {
-    document.getElementById(id).classList.add('show');
-    document.body.style.overflow = 'hidden';
-  };
-  window.closeModal = function(id) {
-    document.getElementById(id).classList.remove('show');
-    document.body.style.overflow = '';
-  };
-  document.querySelectorAll('.modal').forEach(modal => {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal(modal.id);
-      }
-    });
   });
 
   // Форма контактов
