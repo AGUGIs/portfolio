@@ -376,8 +376,6 @@ body {
   text-decoration: underline;
 }
 
-/* === ОСТАЛЬНОЙ КАСТОМНЫЙ CSS (из твоего файла) === */
-
 .center-card {
   background: linear-gradient(to bottom, #5b0c7a 0%, #5b0c7a 50%, #d424b9 100%);
   color: white;
