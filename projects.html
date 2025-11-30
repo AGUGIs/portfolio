@@ -8,119 +8,79 @@
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="assets/astronavtgif.gif" alt="Астронавт" class="me-2">
-      <span>Моё портфолио</span>
-    </a>
-    <button class="navbar-toggler" type="button">☰</button>
-    <div class="navbar-collapse">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-        <li class="nav-item"><a class="nav-link" href="projects.html">Проекты</a></li>
-        <li class="nav-item"><a class="nav-link" href="diary.html">Дневник</a></li>
-        <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+  <nav class="custom-navbar">
+    <div class="custom-container nav-container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/astronavtgif.gif" alt="Астронавт">
+        <span>Моё портфолио</span>
+      </a>
+      <button class="navbar-toggler" id="menuToggle">☰</button>
+      <ul class="navbar-nav" id="navMenu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="projects.html" class="active">Проекты</a></li>
+        <li><a href="diary.html">Дневник</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
       </ul>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<div class="container mt-4">
-  <div class="row justify-content-center align-items-start g-4">
-    <div class="col-md-6 d-flex flex-column gap-3">
-      <h2>Мои проекты</h2>
-      <div class="project-card" onclick="openModal('tetrisModal')">
-        <h5>Игра Тетрис</h5>
-        <p>Полноценная игра Тетрис на C++/QT</p>
-      </div>
-      <div class="project-card" onclick="openModal('chikChirikModal')">
-        <h5>Сайт Chik Chirik</h5>
-        <p>Первый полноценный сайт с модальным окном</p>
-      </div>
-    </div>
-    <div class="col-md-5 d-flex justify-content-center">
-      <div class="contact-image-card">
-        <img src="assets/nlopicture.png" alt="Моя фотография" class="img-fluid rounded">
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Модалки -->
-<div class="modal" id="tetrisModal">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Игра Тетрис</h5>
-        <button type="button" class="btn-close" onclick="closeModal('tetrisModal')"></button>
-      </div>
-      <div class="modal-body">
-        <p><strong>Технологии:</strong> C++, Qt</p>
-        <p><strong>Описание:</strong> Полноценная реализация...</p>
-        <div class="row mt-4 g-3">
-          <div class="col-12 col-md-6">
-            <div class="img-container">
-              <img src="assets/screenshottetris.png" alt="Главное меню Тетрис" class="img-fluid rounded shadow-sm">
-              <div class="img-caption text-center mt-2">Главное меню</div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6">
-            <div class="img-container">
-              <img src="assets/screenshotigritetris.png" alt="Процесс игры в Тетрис" class="img-fluid rounded shadow-sm">
-              <div class="img-caption text-center mt-2">Процесс игры</div>
-            </div>
-          </div>
+  <div class="custom-container main-content">
+    <div class="content-grid">
+      <div class="content-col left-col">
+        <h2 class="section-title">Мои проекты</h2>
+        <div class="project-card" id="tetrisCard">
+          <h5>Игра Тетрис</h5>
+          <p>Полноценная игра Тетрис на C++/QT</p>
+        </div>
+        <div class="project-card" id="chikChirikCard">
+          <h5>Сайт Chik Chirik</h5>
+          <p>Первый полноценный сайт с модальным окном</p>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" onclick="closeModal('tetrisModal')">Закрыть</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal" id="chikChirikModal">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Сайт Chik Chirik</h5>
-        <button type="button" class="btn-close" onclick="closeModal('chikChirikModal')"></button>
-      </div>
-      <div class="modal-body">
-        <p><strong>Технологии:</strong> HTML, CSS, JavaScript</p>
-        <p><strong>Описание:</strong> Первый полноценный сайт...</p>
-        <div class="row mt-4 g-3">
-          <div class="col-12 col-md-6">
-            <div class="img-container">
-              <img src="assets/chickchirikmain.png" alt="Главная страница Chik Chirik" class="img-fluid rounded shadow-sm">
-              <div class="img-caption text-center mt-2">Главная страница</div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6">
-            <div class="img-container">
-              <img src="assets/chickchirikmodal.png" alt="Форма обратной связи" class="img-fluid rounded shadow-sm">
-              <div class="img-caption text-center mt-2">Форма обратной связи</div>
-            </div>
-          </div>
+      <div class="content-col right-col">
+        <div class="contact-image-card">
+          <img src="assets/nlopicture.png" alt="Моя фотография">
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" onclick="closeModal('chikChirikModal')">Закрыть</button>
+    </div>
+  </div>
+
+  <!-- Модальные окна -->
+  <div class="modal" id="modalTetris">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3>Игра Тетрис</h3>
+      <p><strong>Технологии:</strong> C++, Qt</p>
+      <p><strong>Описание:</strong> Полноценная реализация классической игры Тетрис...</p>
+      <div class="modal-images">
+        <img src="assets/screenshottetris.png" alt="Главное меню Тетрис">
+        <img src="assets/screenshotigritetris.png" alt="Процесс игры в Тетрис">
       </div>
     </div>
   </div>
-</div>
 
-<footer class="footer">
-  <div class="container">
-    &copy; 2025 Кирилл. Все права защищены.<br>
-    <a href="https://github.com/AGUGIs" target="_blank" rel="noopener">
-      <i class="bi bi-github me-1"></i>GitHub
-    </a>
+  <div class="modal" id="modalChikChirik">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3>Сайт Chik Chirik</h3>
+      <p><strong>Технологии:</strong> HTML, CSS, JavaScript</p>
+      <p><strong>Описание:</strong> Первый полноценный сайт с адаптивным дизайном...</p>
+      <div class="modal-images">
+        <img src="assets/chickchirikmain.png" alt="Главная страница Chik Chirik">
+        <img src="assets/chickchirikmodal.png" alt="Форма обратной связи">
+      </div>
+    </div>
   </div>
-</footer>
 
-<script src="script.js"></script>
+  <footer class="footer">
+    <div class="custom-container">
+      &copy; 2025 Кирилл. Все права защищены.<br>
+      <a href="https://github.com/AGUGIs" target="_blank" rel="noopener">
+        <i class="bi bi-github"></i> GitHub
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
