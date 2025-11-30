@@ -1,23 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Мобильное меню
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  const navbarCollapse = document.querySelector('.navbar-collapse');
-  if (navbarToggler && navbarCollapse) {
-    navbarToggler.addEventListener('click', () => {
-      navbarCollapse.classList.toggle('show');
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
     });
   }
 
-  // Активный пункт меню
+  // Активация пункта меню
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-link').forEach(link => {
+  document.querySelectorAll('.navbar-nav a').forEach(link => {
     link.classList.remove('active');
     if (link.getAttribute('href') === currentPath) {
       link.classList.add('active');
     }
   });
 
-  // Форма контактов
+  // Простые модалки
+  function openModal(id) {
+    document.getElementById(id).style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.querySelectorAll('.modal').forEach(m => {
+      m.style.display = 'none';
+    });
+    document.body.style.overflow = '';
+  }
+
+  const tetrisCard = document.getElementById('tetrisCard');
+  const chikChirikCard = document.getElementById('chikChirikCard');
+  if (tetrisCard) tetrisCard.addEventListener('click', () => openModal('modalTetris'));
+  if (chikChirikCard) chikChirikCard.addEventListener('click', () => openModal('modalChikChirik'));
+
+  document.querySelectorAll('.modal-close').forEach(btn => {
+    btn.addEventListener('click', closeModal);
+  });
+  window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) closeModal();
+  });
+
+  // Форма
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -30,11 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .then(response => {
         if (response.ok) {
-          document.getElementById('successMessage').classList.remove('d-none');
+          document.getElementById('successMessage').classList.remove('hidden');
           this.reset();
-          setTimeout(() => {
-            document.getElementById('successMessage').classList.add('d-none');
-          }, 5000);
+          setTimeout(() => document.getElementById('successMessage').classList.add('hidden'), 5000);
         } else {
           throw new Error('Ошибка отправки');
         }
