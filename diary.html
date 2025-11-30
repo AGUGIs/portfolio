@@ -8,38 +8,36 @@
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="assets/astronavtgif.gif" alt="Астронавт" class="me-2">
-      <span>Моё портфолио</span>
-    </a>
-    <button class="navbar-toggler" type="button">☰</button>
-    <div class="navbar-collapse">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-        <li class="nav-item"><a class="nav-link" href="projects.html">Проекты</a></li>
-        <li class="nav-item"><a class="nav-link" href="diary.html">Дневник</a></li>
-        <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+  <nav class="custom-navbar">
+    <div class="custom-container nav-container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/astronavtgif.gif" alt="Астронавт">
+        <span>Моё портфолио</span>
+      </a>
+      <button class="navbar-toggler" id="menuToggle">☰</button>
+      <ul class="navbar-nav" id="navMenu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="projects.html">Проекты</a></li>
+        <li><a href="diary.html" class="active">Дневник</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
       </ul>
     </div>
+  </nav>
+
+  <div class="custom-container main-content">
+    <h2>Мой дневник разработчика</h2>
+    <p>Здесь я буду делиться своими мыслями, прогрессом и ошибками.</p>
   </div>
-</nav>
 
-<div class="container mt-4">
-  <h2>Мой дневник разработчика</h2>
-  <p>Здесь я буду делиться своими мыслями, прогрессом и ошибками.</p>
-</div>
+  <footer class="footer">
+    <div class="custom-container">
+      &copy; 2025 Кирилл. Все права защищены.<br>
+      <a href="https://github.com/AGUGIs" target="_blank" rel="noopener">
+        <i class="bi bi-github"></i> GitHub
+      </a>
+    </div>
+  </footer>
 
-<footer class="footer">
-  <div class="container">
-    &copy; 2025 Кирилл. Все права защищены.<br>
-    <a href="https://github.com/AGUGIs" target="_blank" rel="noopener">
-      <i class="bi bi-github me-1"></i>GitHub
-    </a>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
