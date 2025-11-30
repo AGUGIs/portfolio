@@ -4,219 +4,168 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Моё портфолио — Кирилл</title>
-  <!-- Только Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <!-- Собственный CSS -->
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
   <!-- Шапка сайта -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-      <!-- Логотип + Гифка -->
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="assets/astronavtgif.gif" alt="Астронавт" class="me-2">
+  <nav class="custom-navbar">
+    <div class="custom-container nav-container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/astronavtgif.gif" alt="Астронавт">
         <span>Моё портфолио</span>
       </a>
-      <!-- Кнопка-гамбургер для мобильных устройств -->
-      <button class="navbar-toggler" type="button" id="navbarToggler">
-        ☰
-      </button>
-      <!-- Меню навигации -->
-      <div class="navbar-collapse" id="navmenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Проекты</a></li>
-          <li class="nav-item"><a class="nav-link" href="diary.html">Дневник</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-        </ul>
-      </div>
+      <button class="navbar-toggler" id="menuToggle">☰</button>
+      <ul class="navbar-nav" id="navMenu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="projects.html">Проекты</a></li>
+        <li><a href="diary.html">Дневник</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
     </div>
   </nav>
 
-  <div class="container mt-4">
-    <!-- Основная композиция -->
-    <div class="row align-items-center justify-content-center g-4">
-      <!-- Левая плашка 1 -->
-      <div class="col-3 col-md-2 d-flex justify-content-center">
-        <div class="side-card">
-          <div class="card-inner">
-            <img src="assets/picturespaceleft.png" alt="Фото 1">
-          </div>
-        </div>
+  <div class="custom-container main-content">
+    <div class="hero-row">
+      <div class="hero-card">
+        <div class="card-inner"><img src="assets/picturespaceleft.png" alt="Фото 1"></div>
       </div>
-      <!-- Левая плашка 2 (только на десктопе) -->
-      <div class="col-3 col-md-2 d-none d-md-flex justify-content-center">
-        <div class="side-card">
-          <div class="card-inner">
-            <img src="assets/picturespaceright.png" alt="Фото 2">
-          </div>
-        </div>
+      <div class="hero-card hero-card-md">
+        <div class="card-inner"><img src="assets/picturespaceright.png" alt="Фото 2"></div>
       </div>
-      <!-- Центральная карточка -->
-      <div class="col-6 col-md-3">
+      <div class="hero-center">
         <div class="center-card">
           <h3 class="typewriter"><span>Кирилл</span></h3>
           <p>Я студент группы ЭФБО-10-24</p>
           <p>Увлекаюсь веб-разработкой</p>
         </div>
       </div>
-      <!-- Правая плашка 1 -->
-      <div class="col-3 col-md-2 d-flex justify-content-center">
-        <div class="side-card">
-          <div class="card-inner">
-            <img src="assets/picturespace1.png" alt="Фото 3">
-          </div>
-        </div>
+      <div class="hero-card">
+        <div class="card-inner"><img src="assets/picturespace1.png" alt="Фото 3"></div>
       </div>
-      <!-- Правая плашка 2 (только на десктопе) -->
-      <div class="col-3 col-md-2 d-none d-md-flex justify-content-center">
-        <div class="side-card">
-          <div class="card-inner">
-            <img src="assets/picturespace2.png" alt="Фото 4">
-          </div>
-        </div>
+      <div class="hero-card hero-card-md">
+        <div class="card-inner"><img src="assets/picturespace2.png" alt="Фото 4"></div>
       </div>
     </div>
   </div>
 
-  <!-- Информационный блок -->
   <div class="info-block">
-    <h2>Обо мне</h2>
-    <p class="lead">
-      Я студент РТУ МИРЭА, занимаюсь созданием сайтов и приложений.
-      Учусь на факультете full-stack development.
-    </p>
+    <div class="custom-container">
+      <h2>Обо мне</h2>
+      <p>Я студент РТУ МИРЭА, занимаюсь созданием сайтов и приложений. Учусь на факультете full-stack development.</p>
+    </div>
   </div>
 
-  <!-- Раздел "Мои навыки" -->
-  <section class="skills-section py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Мои навыки</h2>
-      <div class="row justify-content-center g-4">
+  <!-- Навыки -->
+  <section class="skills-section">
+    <div class="custom-container">
+      <h2 class="section-title">Мои навыки</h2>
+      <div class="skills-grid">
         <!-- C++ -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="assets/c++picture.png" alt="C++" class="skill-img">
-                <div class="skill-name">C++</div>
-              </div>
-              <div class="flip-card-back">
-                <p>Системное программирование, алгоритмы, высокая производительность</p>
-              </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/c++picture.png" alt="C++" class="skill-img">
+              <div class="skill-name">C++</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Системное программирование, алгоритмы, высокая производительность</p>
             </div>
           </div>
         </div>
         <!-- HTML -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="assets/htmlpicture.png" alt="HTML" class="skill-img">
-                <div class="skill-name">HTML</div>
-              </div>
-              <div class="flip-card-back">
-                <p>Семантическая вёрстка, доступность, современные стандарты</p>
-              </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/htmlpicture.png" alt="HTML" class="skill-img">
+              <div class="skill-name">HTML</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Семантическая вёрстка, доступность, современные стандарты</p>
             </div>
           </div>
         </div>
         <!-- CSS -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="assets/csspicture.png" alt="CSS" class="skill-img">
-                <div class="skill-name">CSS</div>
-              </div>
-              <div class="flip-card-back">
-                <p>Адаптивный дизайн, Flexbox/Grid, анимации и градиенты</p>
-              </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/csspicture.png" alt="CSS" class="skill-img">
+              <div class="skill-name">CSS</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Адаптивный дизайн, Flexbox/Grid, анимации и градиенты</p>
             </div>
           </div>
         </div>
         <!-- Python -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="assets/pythonpicture.png" alt="Python" class="skill-img">
-                <div class="skill-name">Python</div>
-              </div>
-              <div class="flip-card-back">
-                <p>Автоматизация, скрипты, обработка данных и простые API</p>
-              </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/pythonpicture.png" alt="Python" class="skill-img">
+              <div class="skill-name">Python</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Автоматизация, скрипты, обработка данных и простые API</p>
             </div>
           </div>
         </div>
         <!-- C# -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="assets/Csharppicture.png" alt="C#" class="skill-img">
-                <div class="skill-name">C#</div>
-              </div>
-              <div class="flip-card-back">
-                <p>Разработка десктоп-приложений и игр на Unity</p>
-              </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/Csharppicture.png" alt="C#" class="skill-img">
+              <div class="skill-name">C#</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Разработка десктоп-приложений и игр на Unity</p>
             </div>
           </div>
         </div>
         <!-- Qt -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="assets/qtcreatorpicture.png" alt="Qt" class="skill-img">
-                <div class="skill-name">Qt</div>
-              </div>
-              <div class="flip-card-back">
-                <p>Кроссплатформенные GUI-приложения с нативным интерфейсом</p>
-              </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/qtcreatorpicture.png" alt="Qt" class="skill-img">
+              <div class="skill-name">Qt</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Кроссплатформенные GUI-приложения с нативным интерфейсом</p>
             </div>
           </div>
         </div>
         <!-- JavaScript -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="assets/javascriptpicture.png" alt="JavaScript" class="skill-img">
-                <div class="skill-name">JavaScript</div>
-              </div>
-              <div class="flip-card-back">
-                <p>Интерактивность сайтов, DOM, AJAX, работа с API и анимациями</p>
-              </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/javascriptpicture.png" alt="JavaScript" class="skill-img">
+              <div class="skill-name">JavaScript</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Интерактивность сайтов, DOM, AJAX, работа с API и анимациями</p>
             </div>
           </div>
         </div>
         <!-- Bootstrap -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="assets/bootstrappicture.png" alt="Bootstrap" class="skill-img">
-                <div class="skill-name">Bootstrap</div>
-              </div>
-              <div class="flip-card-back">
-                <p>Адаптивная верстка, компоненты (модалки, карусели), быстрая разработка UI</p>
-              </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/bootstrappicture.png" alt="Bootstrap" class="skill-img">
+              <div class="skill-name">Bootstrap</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Адаптивная верстка, компоненты (модалки, карусели), быстрая разработка UI</p>
             </div>
           </div>
         </div>
         <!-- SQL -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img src="assets/sqlpicture.png" alt="SQL" class="skill-img">
-                <div class="skill-name">SQL</div>
-              </div>
-              <div class="flip-card-back">
-                <p>Работа с базами данных, запросы (SELECT, JOIN, GROUP BY), проектирование таблиц</p>
-              </div>
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="assets/sqlpicture.png" alt="SQL" class="skill-img">
+              <div class="skill-name">SQL</div>
+            </div>
+            <div class="flip-card-back">
+              <p>Работа с базами данных, запросы (SELECT, JOIN, GROUP BY), проектирование таблиц</p>
             </div>
           </div>
         </div>
@@ -224,96 +173,44 @@
     </div>
   </section>
 
-  <!-- Инструменты и технологии -->
-  <section class="tools-section py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">Инструменты и технологии</h2>
-      <div class="row justify-content-center g-4">
-        <!-- Git -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="tool-icon">
-            <i class="bi bi-git" style="font-size: 2.8rem; color: #f05133;"></i>
-            <div class="mt-2">Git</div>
-          </div>
-        </div>
-        <!-- GitHub -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="tool-icon">
-            <i class="bi bi-github" style="font-size: 2.8rem; color: #333;"></i>
-            <div class="mt-2">GitHub</div>
-          </div>
-        </div>
-        <!-- VS Code -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="tool-icon">
-            <i class="bi bi-filetype-js" style="font-size: 2.8rem; color: #007acc;"></i>
-            <div class="mt-2">VS Code</div>
-          </div>
-        </div>
-        <!-- Visual Studio -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="tool-icon">
-            <i class="bi bi-code-slash" style="font-size: 2.8rem; color: #007acc;"></i>
-            <div class="mt-2">Visual Studio</div>
-          </div>
-        </div>
-        <!-- Qt Creator -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="tool-icon">
-            <i class="bi bi-braces" style="font-size: 2.8rem; color: #41cd52;"></i>
-            <div class="mt-2">Qt Creator</div>
-          </div>
-        </div>
-        <!-- PostgreSQL -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="tool-icon">
-            <i class="bi bi-database" style="font-size: 2.8rem; color: #336791;"></i>
-            <div class="mt-2">PostgreSQL</div>
-          </div>
-        </div>
-        <!-- Astra Linux -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="tool-icon">
-            <i class="bi bi-terminal" style="font-size: 2.8rem; color: #000;"></i>
-            <div class="mt-2">Astra Linux</div>
-          </div>
-        </div>
-        <!-- PyCharm -->
-        <div class="col-6 col-md-2 text-center">
-          <div class="tool-icon">
-            <i class="bi bi-filetype-py" style="font-size: 2.8rem; color: #f37626;"></i>
-            <div class="mt-2">PyCharm</div>
-          </div>
-        </div>
+  <!-- Инструменты -->
+  <section class="tools-section">
+    <div class="custom-container">
+      <h2 class="section-title">Инструменты и технологии</h2>
+      <div class="tools-grid">
+        <div class="tool-item"><i class="bi bi-git"></i><span>Git</span></div>
+        <div class="tool-item"><i class="bi bi-github"></i><span>GitHub</span></div>
+        <div class="tool-item"><i class="bi bi-filetype-js"></i><span>VS Code</span></div>
+        <div class="tool-item"><i class="bi bi-code-slash"></i><span>Visual Studio</span></div>
+        <div class="tool-item"><i class="bi bi-braces"></i><span>Qt Creator</span></div>
+        <div class="tool-item"><i class="bi bi-database"></i><span>PostgreSQL</span></div>
+        <div class="tool-item"><i class="bi bi-terminal"></i><span>Astra Linux</span></div>
+        <div class="tool-item"><i class="bi bi-filetype-py"></i><span>PyCharm</span></div>
       </div>
     </div>
   </section>
 
   <!-- Образование -->
-  <section class="education-section py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Образование</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="education-item p-4 bg-white rounded shadow-sm">
-            <h4 class="mb-2">РТУ МИРЭА — Российский технологический университет</h4>
-            <p class="text-muted mb-1"><strong>Бакалавриат</strong> | 2024–2028</p>
-            <p>Институт: <strong>ИПТИП - Институт перспективных технологий и индустриального программирования</strong></p>
-            <p>Факультет: <strong>Full-Stack разработка</strong></p>
-          </div>
-        </div>
+  <section class="education-section">
+    <div class="custom-container">
+      <h2 class="section-title">Образование</h2>
+      <div class="education-card">
+        <h4>РТУ МИРЭА — Российский технологический университет</h4>
+        <p><strong>Бакалавриат</strong> | 2024–2028</p>
+        <p>Институт: <strong>ИПТИП - Институт перспективных технологий и индустриального программирования</strong></p>
+        <p>Факультет: <strong>Full-Stack разработка</strong></p>
       </div>
     </div>
   </section>
 
-  <!-- Цитата на космическом фоне -->
-  <section class="motto-section py-5">
-    <div class="container">
-      <div class="motto-bg" style="background-image: url('assets/spacepicture3.jpg'); background-size: cover; background-position: center; padding: 4rem 2rem; border-radius: 16px;">
+  <!-- Цитата -->
+  <section class="motto-section">
+    <div class="custom-container">
+      <div class="motto-bg" style="background-image: url('assets/spacepicture3.jpg')">
         <div class="motto-overlay">
-          <blockquote class="blockquote mb-0">
-            <p class="lead fst-italic">«С большой силой приходит большая ответственность»</p>
-            <footer class="blockquote-footer mt-3"><em>Дядя Бэн</em>, Spiderman</footer>
+          <blockquote>
+            <p>«С большой силой приходит большая ответственность»</p>
+            <footer><em>Дядя Бэн</em>, Spiderman</footer>
           </blockquote>
         </div>
       </div>
@@ -322,15 +219,14 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
+    <div class="custom-container">
       &copy; 2025 Кирилл. Все права защищены.<br>
       <a href="https://github.com/AGUGIs" target="_blank" rel="noopener">
-        <i class="bi bi-github me-1"></i>GitHub
+        <i class="bi bi-github"></i> GitHub
       </a>
     </div>
   </footer>
 
-  <!-- Единый JS-файл -->
   <script src="script.js"></script>
 </body>
 </html>
