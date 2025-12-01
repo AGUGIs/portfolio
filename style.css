@@ -156,14 +156,12 @@ a { text-decoration: none; color: inherit; }
 .info-block {
   background: #0e0d57;
   color: white;
-  padding: 2rem 0;
+  padding: 2rem;
   text-align: center;
   margin: 3rem auto 2rem;
   max-width: 1000px;
   border-radius: 16px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-  width: 100%;
-  box-sizing: border-box;
 }
 .info-block .custom-container {
   padding: 0 2rem;
