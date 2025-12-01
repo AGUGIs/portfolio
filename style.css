@@ -107,48 +107,108 @@ a { text-decoration: none; color: inherit; }
   font-size: 1.8rem;
 }
 
-/* === Главная композиция === */
-/* === Главная композиция — обновленная === */
+/* === Главная композиция — исправленная === */
 .hero-row {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  align-items: flex-start; /* чтобы не растягивалось по высоте */
+  gap: 1.5rem;
   flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 100%;
 }
 
-.hero-side-group {
+.hero-col {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   min-width: 150px;
+  flex: 0 0 auto; /* не растягивать */
 }
 
 .hero-card {
   width: 150px;
   height: 200px;
   perspective: 800px;
+  position: relative;
+}
+
+.hero-card .card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.6s, box-shadow 0.6s;
+}
+
+.hero-card:hover .card-inner {
+  transform: translateZ(10px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3), 0 0 30px #4facfe;
+}
+
+.hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-center {
+  max-width: 300px;
+  flex: 0 0 auto;
+}
+
+.center-card {
+  background: linear-gradient(to bottom, #5b0c7a 0%, #5b0c7a 50%, #d424b9 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.6s, box-shadow 0.6s;
+}
+
+.center-card:hover {
+  transform: translateZ(20px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2), 0 0 45px #4facfe;
+  outline: 2px solid #4facfe;
+  outline-offset: 4px;
 }
 
 /* === Мобильная версия: по одной карточке с каждой стороны === */
 @media (max-width: 767px) {
-  .hero-side-group {
+  .hero-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero-col {
     flex-direction: row;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
   }
+
   .hero-card {
     width: 120px;
     height: 160px;
   }
 
-  /* Показываем только первую карточку в группе */
-  .hero-side-group .hero-card:nth-child(2) {
+  /* Скрываем вторую карточку в группе */
+  .hero-col .hero-card:nth-child(2) {
     display: none;
   }
 
-  .hero-row {
-    gap: 1.5rem;
+  .hero-center {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .center-card {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
