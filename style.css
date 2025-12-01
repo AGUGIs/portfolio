@@ -140,6 +140,7 @@ a { text-decoration: none; color: inherit; }
   height: 200px;
   perspective: 800px;
   position: relative;
+  flex: 0 0 auto; /* Не растягиваем */
 }
 
 .hero-card .card-inner {
@@ -187,15 +188,18 @@ a { text-decoration: none; color: inherit; }
 /* === Мобильная версия: по одной карточке с каждой стороны === */
 @media (max-width: 767px) {
   .hero-row {
-    flex-direction: column;
+    flex-direction: row; /* Оставляем в строке */
+    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 0.5rem;
     padding: 0 0.5rem;
+    flex-wrap: nowrap; /* Не переносим на новую строку */
   }
 
   .hero-card {
-    width: 120px;
-    height: 160px;
+    width: 100px;
+    height: 133px; /* Сохраняем пропорции 3:4 */
+    flex: 0 0 auto;
   }
 
   /* Скрываем вторую левую и вторую правую карточку */
@@ -205,14 +209,13 @@ a { text-decoration: none; color: inherit; }
   }
 
   .hero-center {
-    width: 100%;
-    max-width: 100%;
+    max-width: 180px;
+    flex: 0 0 auto;
   }
 
   .center-card {
-    width: 100%;
-    max-width: 100%;
-    padding: 1.5rem;
+    padding: 1rem;
+    font-size: 0.9rem;
   }
 }
 
