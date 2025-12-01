@@ -123,24 +123,16 @@ a { text-decoration: none; color: inherit; }
   font-size: 1.8rem;
 }
 
-/* === Главная композиция — исправленная === */
+/* === Главная композиция — горизонтальная === */
 .hero-row {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: 100%;
   padding: 0 1rem;
-}
-
-.hero-col {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  min-width: 150px;
-  flex: 0 0 auto;
 }
 
 .hero-card {
@@ -201,21 +193,14 @@ a { text-decoration: none; color: inherit; }
     padding: 0 0.5rem;
   }
 
-  .hero-col {
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-    max-width: 300px;
-  }
-
   .hero-card {
     width: 120px;
     height: 160px;
   }
 
-  /* Скрываем вторую карточку в группе */
-  .hero-col .hero-card:nth-child(2) {
+  /* Скрываем вторую левую и вторую правую карточку */
+  .hero-card-left:nth-child(2),
+  .hero-card-right:nth-child(2) {
     display: none;
   }
 
